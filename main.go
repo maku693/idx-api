@@ -13,8 +13,8 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Hello, golang")
+		log.Printf("[%s] %s", r.Method, r.URL)
+		fmt.Fprintf(w, "Hello, golang")
 	})
-
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
