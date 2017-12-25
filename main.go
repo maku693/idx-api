@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// addr indicates the address used by the server.
 var addr = flag.String("addr", ":8080", "the address of the server")
 
 // Log returns a handler that wraps the given handler with request logging
